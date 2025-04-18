@@ -1,0 +1,30 @@
+{
+  "name": "food_delivery",
+  "version": "1.0.0",
+  "description": "",
+  
+ "scripts": {
+  "start": "parcel index.html --open",
+  "build": "parcel build index.html"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruba001/food_delivery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruba001/food_delivery/issues"
+  },
+  "homepage": "https://github.com/dhruba001/food_delivery#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+  
+
+}
