@@ -2,11 +2,10 @@
   "name": "food_delivery",
   "version": "1.0.0",
   "description": "",
-  
- "scripts": {
-  "start": "parcel index.html --open",
-  "build": "parcel build index.html"
-},
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dhruba001/food_delivery.git"
@@ -25,6 +24,4 @@
   "devDependencies": {
     "parcel": "^2.14.4"
   }
-  
-
 }
