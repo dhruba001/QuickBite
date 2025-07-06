@@ -1,38 +1,23 @@
 import ResturantCard from "./ResturantCard";
-import { useState } from "react";
-import { resList } from "../utils/mockData";
+import { useState, useEffect } from "react";
 
 const Body = () => {
-  // let listOfRestaurants = [
-  //   {
-  //     info: {
-  //       id: "8032",
-  //       name: "Burger King",
-  //       cloudinaryImageId:
-  //         "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/f448a87b-da49-4da4-9fa4-d9ed0436bbe8_8032.jpg",
-  //       cuisines: ["Burgers", "American"],
-  //       avgRating: 4.3,
-  //       sla: {
-  //         slaString: "35-40 mins",
-  //       },
-  //     },
-  //   },
-  //   {
-  //     info: {
-  //       id: "8033",
-  //       name: "Dominos",
-  //       cloudinaryImageId:
-  //         "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/f448a87b-da49-4da4-9fa4-d9ed0436bbe8_8032.jpg",
-  //       cuisines: ["Burgers", "American"],
-  //       avgRating: 4.9,
-  //       sla: {
-  //         slaString: "35-40 mins",
-  //       },
-  //     },
-  //   },
-  // ];
+  const [listOfRestaurants1, setListOfRestaurants1] = useState([]);
 
-  const [listOfRestaurants1, setListOfRestaurants1] = useState(resList);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
+    setListOfRestaurants1(
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
+  };
 
   return (
     <div className="body">
@@ -48,13 +33,6 @@ const Body = () => {
           }}
         >
           Top rated restaurant
-        </button>
-        <button
-          onClick={() => {
-            setListOfRestaurants1(resList);
-          }}
-        >
-          Reset
         </button>
       </div>
       <div className="res-container">
