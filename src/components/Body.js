@@ -22,7 +22,6 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      {/* <div className="search">Search</div> */}
       <div className="filter">
         <button
           className="filter-btn"
