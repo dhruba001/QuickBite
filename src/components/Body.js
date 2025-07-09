@@ -1,6 +1,6 @@
 import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
-import { SWIGGY_API_LIVE } from "../utils/constants";
+import { SWIGGY_API_LIVE_V5 } from "../utils/constants";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
@@ -13,7 +13,7 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(SWIGGY_API_LIVE);
+    const data = await fetch(SWIGGY_API_LIVE_V5);
     const json = await data.json();
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
