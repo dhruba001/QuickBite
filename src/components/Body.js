@@ -23,6 +23,10 @@ const Body = () => {
     );
   };
 
+  {
+    console.log("a");
+  }
+
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
