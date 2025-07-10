@@ -24,7 +24,7 @@ const Body = () => {
   };
 
   {
-    console.log("a");
+    console.log("ab");
   }
 
   return listOfRestaurants.length === 0 ? (
