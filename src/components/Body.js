@@ -23,10 +23,6 @@ const Body = () => {
     );
   };
 
-  {
-    console.log("ab");
-  }
-
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
@@ -66,7 +62,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <ResturantCard key={restaurant.info.id} resData={restaurant} />
+          <ResturantCard key={idx} resData={restaurant} />
         ))}
       </div>
     </div>
