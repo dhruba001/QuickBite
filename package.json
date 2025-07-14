@@ -19,7 +19,8 @@
   "homepage": "https://github.com/dhruba001/food_delivery#readme",
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3"
   },
   "devDependencies": {
     "parcel": "^2.14.4"
