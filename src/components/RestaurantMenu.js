@@ -12,17 +12,16 @@ const RestaurantMenu = () => {
   const fetchMenu = async () => {
     const data = await fetch(Meghna_food_menu);
     const json = await data.json();
-    console.log(json);
     setResInfo(json.data);
   };
 
   if (resInfo === null) return <Shimmer />;
 
-  const { name, cuisines, costForTwoMessage } = resInfo.cards[2].card.card.info;
+  const { name, cuisines, costForTwoMessage } =
+    resInfo?.cards[2]?.card?.card?.info;
 
-  // const { itemCards } =
-  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
-  //     ?.itemcards;
+  const { itemCards } =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 
   return (
     <div className="menu">
