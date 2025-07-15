@@ -30,9 +30,11 @@ const RestaurantMenu = () => {
       <h3>{costForTwoMessage}</h3>
       <h2>Menu</h2>
       <ul>
-        <li>Biriwani</li>
-        <li>Burgers</li>
-        <li>Diet Coke</li>
+        {itemCards.map((item) => (
+          <li key={item.card.info.id}>
+            {item.card.info.name} - Rs{item.card.info.price / 100}
+          </li>
+        ))}
       </ul>
     </div>
   );
