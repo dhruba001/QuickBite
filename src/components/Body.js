@@ -1,32 +1,22 @@
+// src/components/Body.js
 import ResturantCard from "./ResturantCard";
-import { useState, useEffect } from "react";
-import { SWIGGY_API_LIVE_V5 } from "../utils/constants";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestraurantList from "../utils/useRestrauntList";
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const { listOfRestaurants, filteredRestaurant, setFilteredRestaurant } =
+    useRestraurantList();
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  if (onlineStatus === false)
+    return <h1>you're offline, check internet status</h1>;
+  if (listOfRestaurants.length === 0) return <Shimmer />;
 
-  const fetchData = async () => {
-    const data = await fetch(SWIGGY_API_LIVE_V5);
-    const json = await data.json();
-    setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
-
-  return listOfRestaurants.length === 0 ? (
-    <Shimmer />
-  ) : (
+  return (
     <div className="body">
       <div className="filter">
         <div className="search">
@@ -34,9 +24,7 @@ const Body = () => {
             type="text"
             className="search-box"
             value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
+            onChange={(e) => setSearchText(e.target.value)}
           />
           <button
             onClick={() => {
