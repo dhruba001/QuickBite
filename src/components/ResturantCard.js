@@ -20,4 +20,17 @@ const ResturantCard = (props) => {
   );
 };
 
+export const withPromotedLabel = (ResturantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-lime-400 text-green-800 rounded-md m-2 p-2">
+          open
+        </label>
+        <ResturantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default ResturantCard;

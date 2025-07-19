@@ -1,5 +1,5 @@
 // src/components/Body.js
-import ResturantCard from "./ResturantCard";
+import ResturantCard, { withPromotedLabel } from "./ResturantCard";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
@@ -11,6 +11,7 @@ const Body = () => {
     useRestraurantList();
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
+  const RestaurantCardPromoted = withPromotedLabel(ResturantCard);
 
   if (onlineStatus === false)
     return <h1>you're offline, check internet status</h1>;
@@ -58,7 +59,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <ResturantCard resData={restaurant} />
+            {restaurant.info.isOpen ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <ResturantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
