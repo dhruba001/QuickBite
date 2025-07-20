@@ -4,7 +4,8 @@ A Swiggy-inspired food delivery frontend web app built using modern React practi
 
 ## 🚀 Live Demo
 
-Coming soon...
+https://quick-bite-two-rho.vercel.app/ 
+[ enable cors chrome extension for proper viewing ]
 
 ## 🛠️ Tech Stack
 
