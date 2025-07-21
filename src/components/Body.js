@@ -1,16 +1,18 @@
 // src/components/Body.js
 import ResturantCard, { withPromotedLabel } from "./ResturantCard";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestraurantList from "../utils/useRestrauntList";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const { listOfRestaurants, filteredRestaurant, setFilteredRestaurant } =
     useRestraurantList();
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser, setUserName } = useContext(UserContext);
   const RestaurantCardPromoted = withPromotedLabel(ResturantCard);
 
   if (onlineStatus === false)
@@ -51,6 +53,16 @@ const Body = () => {
           >
             Top rated restaurant
           </button>
+        </div>
+        <div className="search m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
         </div>
       </div>
       <div className="flex flex-wrap">
