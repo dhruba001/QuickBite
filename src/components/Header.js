@@ -16,25 +16,25 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
-          <li className="px-4 text-xl">
+          <li className="px-4 text-xm">
             Online Status :{onlineStatus ? "✅" : "🔴"}
           </li>
-          <li className="text-xl">
+          <li className="text-xm">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-4 text-xl">
+          <li className="px-4 text-xm">
             <Link to="/about">AboutUs</Link>
           </li>
-          <li className="px-4 text-xl">
+          <li className="px-4 text-xm">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="px-4 text-xl">
+          <li className="px-4 text-xm">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-4 text-xl">Cart</li>
+          <li className="px-4 text-xm">Cart</li>
           <li className="px-4">
             <button
-              className="login text-xl"
+              className="login text-xm"
               onClick={() => {
                 if (btnName === "Login") setBtnName("Logout");
                 else setBtnName("Login");
@@ -43,7 +43,7 @@ const Header = () => {
               {btnName}
             </button>
           </li>
-          <li className="px-4 font-bold text-xl">{loggedInUser}</li>
+          <li className="px-4 font-bold text-xm">{loggedInUser}</li>
         </ul>
       </div>
     </div>
