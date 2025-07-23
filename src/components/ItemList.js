@@ -1,6 +1,11 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+
+  const handelAddItem = () => {};
+
   return (
     <div>
       {items.map((item) => (
@@ -25,7 +30,10 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-5/12 m-10">
             <div>
-              <button className="p-2 mx-16 rounded-lg bg-white shadow-lg">
+              <button
+                className="p-2 mx-16 rounded-lg bg-white shadow-lg"
+                onClick={handelAddItem}
+              >
                 Add +
               </button>
             </div>
