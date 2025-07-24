@@ -4,8 +4,8 @@ import "@testing-library/jest-dom";
 
 test("should load contactUs component", () => {
   render(<Contact />);
-  const heading = screen.getByRole("heading");
-  expect(heading).toBeInTheDocument();
+  const heading = screen.getByRole("heading"); // we are querying
+  expect(heading).toBeInTheDocument(); // Assertion
 });
 
 test("should load button inside contactUs component", () => {
@@ -28,5 +28,6 @@ test("should load input name inside contactUs component", () => {
 
 test("should load 2 input boxes inside contactUs component", () => {
   render(<Contact />);
-  screen.getAllByRole("textbox");
+  const inputBox = screen.getAllByRole("textbox");
+  expect(inputBox.length).toBe(2);
 });
