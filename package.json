@@ -6,7 +6,8 @@
     "start": "rimraf .parcel-cache dist && parcel index.html",
     "build": "rimraf .parcel-cache dist && parcel build index.html",
     "dev": "parcel index.html --no-cache",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "repository": {
     "type": "git",
