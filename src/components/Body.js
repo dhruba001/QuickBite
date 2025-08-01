@@ -47,7 +47,7 @@ const Body = () => {
             className="px-3 py-1.5 bg-gray-100 m-4 rounded-lg"
             onClick={() => {
               const filterdListOfRestaurants = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4.3
+                (res) => res.info.avgRating > 4.5
               );
               setFilteredRestaurant(filterdListOfRestaurants);
             }}
