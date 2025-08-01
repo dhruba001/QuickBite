@@ -1,6 +1,7 @@
 import { act } from "react";
 import RestaurantMenu from "../RestaurantMenu";
 import Header from "../Header";
+import Cart from "../Cart";
 import MOCK_DATA from "../mocks/mockResMenu.json";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
@@ -23,6 +24,7 @@ it("should load restraurant menu component", async () => {
         <Provider store={appStore}>
           <Header />
           <RestaurantMenu />
+          <Cart />
         </Provider>
       </BrowserRouter>
     )
