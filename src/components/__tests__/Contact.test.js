@@ -11,6 +11,14 @@ describe("Contact Us Page Test Cases", () => {
     console.log("It will run before each tests");
   });
 
+  afterAll(() => {
+    console.log("It will run after all tests");
+  });
+
+  afterEach(() => {
+    console.log("It will run after each tests");
+  });
+
   // all test cases at one block
   test("should load contactUs component", () => {
     // start test case description with a should
