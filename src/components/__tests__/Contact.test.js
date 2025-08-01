@@ -3,6 +3,7 @@ import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
 describe("Contact Us Page Test Cases", () => {
+  //helper function
   beforeAll(() => {
     console.log("It will run before all tests");
   });
