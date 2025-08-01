@@ -25,6 +25,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid="searchInput" // will be used in search.test, jest reads it
             className="border box-border"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
