@@ -27,5 +27,5 @@ https://quick-bite-two-rho.vercel.app/
 
 ## 📚 Learning Focus
 
-This project is part of my hands-on learning journey through Akshay Saini’s **Namaste React** and other advanced React concepts.
+This project is part of my hands-on learning journey through Akshay Saini’s **Namaste React** and other advanced React concepts
 
