@@ -9,7 +9,7 @@ https://quick-bite-two-rho.vercel.app/
 
 ## 🛠️ Tech Stack
 
-- **React** (with functional components and hooks)
+- **React** (with functional components and hooks and Redux)
 - **React Router DOM**
 - **JavaScript (ES6+)**
 - **Tailwind CSS**
